@@ -143,6 +143,23 @@
   .section-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);}
   .section-head p{color:var(--text-muted);margin-top:14px;font-size:1.02rem;}
 
+  .proposal-layout{
+    display:grid;grid-template-columns:1.2fr 0.8fr;gap:32px;align-items:center;
+    margin-top:20px;
+  }
+  .proposal-layout > .section-head{margin:0;}
+  .proposal-visual{
+    display:flex;justify-content:center;align-items:center;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    border:1px solid var(--line);border-radius:8px;overflow:hidden;
+    min-height:220px;
+  }
+  .proposal-visual img{
+    display:block;width:100%;max-width:420px;height:auto;
+    object-fit:contain;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.35));
+  }
+  @media (max-width:900px){ .proposal-layout{grid-template-columns:1fr;} }
+
   /* ---------- FEATURES ---------- */
   .feature-row{
     display:grid;grid-template-columns:110px 1fr;gap:28px;
@@ -161,6 +178,9 @@
     aspect-ratio:4/5;border-radius:2px;overflow:hidden;
     background:linear-gradient(160deg, var(--green-deep), var(--bg-2) 60%, var(--panel));
     position:relative;border:1px solid var(--line);
+  }
+  .split .art img{
+    width:100%;height:100%;object-fit:cover;display:block;
   }
   .split .art svg{width:100%;height:100%;}
   .split p{color:var(--text-muted);margin-top:16px;}
@@ -201,6 +221,12 @@
     background:linear-gradient(180deg, #2b3d22, #1a2415 75%);
   }
   .screen-scene svg{width:100%;height:100%;}
+  .prototype-mockup{
+    display:block;width:100%;height:100%;
+    object-fit:contain;background:#1a2415;
+    padding:18px;
+    max-height:340px;
+  }
   .hud{
     position:absolute;top:12px;left:12px;right:12px;
     display:flex;justify-content:space-between;align-items:center;
@@ -254,7 +280,7 @@
       <ul>
         <li><a href="#jogo">A proposta</a></li>
         <li><a href="#serra">A Serra Paulista</a></li>
-        <li><a href="#prototipo">Protótipo</a></li>
+        <li><a href="#prototipo">Rascunho da Jogabilidade</a></li>
         <li><a href="#equipe">Equipe</a></li>
       </ul>
       <a href="#apresentacao" class="btn-outline" style="padding:9px 18px;font-size:0.88rem;">Apresentação</a>
@@ -300,10 +326,16 @@
 
 <section id="jogo">
   <div class="container-narrow">
-    <div class="section-head">
-      <div class="kicker">a proposta · vigia verde</div>
-      <h2>Uma floresta pode ser protegida antes que o pequeno risco vire um grande incêndio.</h2>
-      <p>Em <em>Vigia Verde</em>, o jogador acompanha <strong>A.S.H</strong>, um robô-guardião criado para patrulhar a mata. Seu sensor identifica o nível de risco de cada trecho em três cores: verde, amarelo e vermelho. A missão é reconhecer o perigo cedo, agir no momento certo e saber quando pedir ajuda especializada.</p>
+    <div class="proposal-layout">
+      <div class="section-head">
+        <div class="kicker">a proposta · vigia verde</div>
+        <h2>Uma floresta pode ser protegida antes que o pequeno risco vire um grande incêndio.</h2>
+        <p>Em <em>Vigia Verde</em>, o jogador acompanha <strong>A.S.H</strong>, um robô-guardião criado para patrulhar a mata. Seu sensor identifica o nível de risco de cada trecho em três cores: verde, amarelo e vermelho. A missão é reconhecer o perigo cedo, agir no momento certo e saber quando pedir ajuda especializada.</p>
+      </div>
+
+      <div class="proposal-visual">
+        <img src="src/ash.png" alt="Robô A.S.H da proposta de Serra Viva" />
+      </div>
     </div>
 
     <div class="feature-row">
@@ -368,18 +400,7 @@
       </div>
     </div>
     <div class="art">
-      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#37502F"/>
-            <stop offset="100%" stop-color="#12190F"/>
-          </linearGradient>
-        </defs>
-        <rect width="400" height="500" fill="url(#sky)"/>
-        <path d="M0,340 L60,260 L130,320 L200,220 L260,300 L330,240 L400,310 L400,500 L0,500 Z" fill="#1E2A18"/>
-        <path d="M0,400 L90,340 L170,390 L250,320 L340,380 L400,350 L400,500 L0,500 Z" fill="#263420"/>
-        <circle cx="320" cy="90" r="46" fill="#F2A93B" opacity="0.85"/>
-      </svg>
+      <img src="src/serra-da-paulista.jpg" alt="Vista da Serra da Paulista" />
     </div>
   </div>
 </section>
@@ -400,43 +421,7 @@
         </div>
         <div class="screen-body">
           <div class="screen-scene map-only">
-            <svg viewBox="0 0 500 340" preserveAspectRatio="xMidYMax slice">
-              <!-- terreno / clareiras -->
-              <path d="M0,240 L80,190 L160,250 L240,180 L320,240 L400,170 L500,230 L500,340 L0,340 Z" fill="#233020"/>
-              <path d="M0,285 L100,245 L220,290 L330,235 L440,280 L500,260 L500,340 L0,340 Z" fill="#2b3d22"/>
-              <!-- rio -->
-              <path d="M0,110 C70,128 120,95 190,118 C260,140 300,105 500,122" stroke="#37502F" stroke-width="6" fill="none" opacity="0.5"/>
-              <!-- copas de árvore espalhadas (vista de cima) -->
-              <g fill="#2f4426" opacity="0.9">
-                <circle cx="35" cy="55" r="10"/><circle cx="52" cy="68" r="7"/>
-                <circle cx="115" cy="42" r="9"/><circle cx="135" cy="58" r="6"/>
-                <circle cx="200" cy="80" r="8"/>
-                <circle cx="260" cy="50" r="11"/><circle cx="282" cy="38" r="7"/>
-                <circle cx="340" cy="95" r="7"/>
-                <circle cx="395" cy="60" r="9"/><circle cx="418" cy="46" r="6"/>
-                <circle cx="470" cy="75" r="10"/>
-                <circle cx="70" cy="150" r="8"/><circle cx="150" cy="175" r="7"/>
-                <circle cx="230" cy="195" r="9"/><circle cx="310" cy="160" r="8"/>
-                <circle cx="380" cy="185" r="7"/><circle cx="455" cy="155" r="9"/>
-                <circle cx="110" cy="255" r="8"/><circle cx="200" cy="270" r="7"/>
-                <circle cx="330" cy="260" r="8"/><circle cx="420" cy="245" r="9"/>
-              </g>
-
-              <!-- pontos de foco espalhados pelo mapa -->
-              <g transform="translate(70,95)"><circle r="12" fill="#6E8F5C" opacity="0.22"><animate attributeName="r" values="9;14;9" dur="3.2s" repeatCount="indefinite"/></circle><circle r="5.5" fill="#6E8F5C" stroke="#12190F" stroke-width="2"/></g>
-              <g transform="translate(300,70)"><circle r="12" fill="#6E8F5C" opacity="0.22"><animate attributeName="r" values="9;14;9" dur="3.6s" repeatCount="indefinite"/></circle><circle r="5.5" fill="#6E8F5C" stroke="#12190F" stroke-width="2"/></g>
-              <g transform="translate(440,210)"><circle r="12" fill="#6E8F5C" opacity="0.22"><animate attributeName="r" values="9;14;9" dur="3s" repeatCount="indefinite"/></circle><circle r="5.5" fill="#6E8F5C" stroke="#12190F" stroke-width="2"/></g>
-
-              <g transform="translate(185,130)"><circle r="13" fill="#F2A93B" opacity="0.25"><animate attributeName="r" values="9;17;9" dur="1.9s" repeatCount="indefinite"/></circle><circle r="6" fill="#F2A93B" stroke="#12190F" stroke-width="2"/></g>
-              <g transform="translate(390,140)"><circle r="13" fill="#F2A93B" opacity="0.25"><animate attributeName="r" values="9;17;9" dur="1.6s" repeatCount="indefinite"/></circle><circle r="6" fill="#F2A93B" stroke="#12190F" stroke-width="2"/></g>
-
-              <g transform="translate(120,220)"><circle r="15" fill="#E8641C" opacity="0.28"><animate attributeName="r" values="11;20;11" dur="1.2s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#E8641C" stroke="#12190F" stroke-width="2"/></g>
-              <g transform="translate(255,265)"><circle r="15" fill="#E8641C" opacity="0.28"><animate attributeName="r" values="11;20;11" dur="1.4s" repeatCount="indefinite"/></circle><circle r="6.5" fill="#E8641C" stroke="#12190F" stroke-width="2"/></g>
-            </svg>
-            <div class="hud">
-              <span>A.S.H · patrulha em curso</span>
-              <div class="meter"><i></i></div>
-            </div>
+            <img src="src/mockup.png" alt="Mockup do protótipo do jogo Serra Viva" class="prototype-mockup">
           </div>
         </div>
       </div>
