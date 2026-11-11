@@ -172,6 +172,18 @@
   .feature-row p{color:var(--text-muted);margin:0;max-width:560px;}
   @media (max-width:640px){ .feature-row{grid-template-columns:1fr;gap:12px;} }
 
+
+  /* ---------- JUSTIFICATIVAS ---------- */
+  .just-row{
+    display:grid;grid-template-columns:110px 1fr;gap:28px;
+    padding:32px 0;border-top:1px solid var(--line);align-items:start;
+  }
+  .just-row:last-child{border-bottom:1px solid var(--line);}
+  .just-num{font-family:'Fraunces',serif;font-size:3.2rem;line-height:1;color:var(--amber);}
+  .just-row h3{font-size:1.28rem;margin-bottom:8px;color:var(--text);}
+  .just-row p{color:var(--text-muted);margin:0;max-width:620px;}
+  @media (max-width:640px){ .just-row{grid-template-columns:1fr;gap:10px;} }
+
   /* ---------- SPLIT (about the range) ---------- */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
   .split .art{
@@ -299,6 +311,7 @@
       <ul>
         <li><a href="#jogo">A proposta</a></li>
         <li><a href="#serra">A Serra Paulista</a></li>
+        <li><a href="#justificativas">Justificativas</a></li>
         <li><a href="#prototipo">Rascunho da Jogabilidade</a></li>
         <li><a href="#demo">Demonstração</a></li>
         <li><a href="#equipe">Equipe</a></li>
@@ -424,6 +437,40 @@
   </div>
 </section>
 
+<section id="justificativas">
+  <div class="container-narrow">
+    <div class="section-head">
+      <div class="kicker">por que este projeto</div>
+      <h2>Um problema da nossa região, com solução que começa na educação.</h2>
+      <p>Três motivos que sustentam a escolha de um jogo como ferramenta de prevenção.</p>
+    </div>
+
+    <div class="just-row">
+      <div class="just-num">01</div>
+      <div>
+        <h3>Um problema frequente e evitável</h3>
+        <p>A Serra Paulista, em São João da Boa Vista, sofre com queimadas recorrentes, e boa parte delas nasce de ações humanas que podiam ter sido evitadas. O custo é alto: perda de biodiversidade e riscos à saúde de quem vive na região.</p>
+      </div>
+    </div>
+
+    <div class="just-row">
+      <div class="just-num">02</div>
+      <div>
+        <h3>Prevenir aprendendo, de forma interativa</h3>
+        <p>Um jogo educativo transforma a prevenção ambiental em experiência: acessível, envolvente e pensada para crianças. Em vez de só ouvir que o fogo é perigoso, o jogador decide, erra, vê a consequência e aprende a agir cedo.</p>
+      </div>
+    </div>
+
+    <div class="just-row">
+      <div class="just-num">03</div>
+      <div>
+        <h3>Cidadãos conscientes, patrimônio preservado</h3>
+        <p>A iniciativa ajuda a formar cidadãos mais conscientes, reforça o trabalho pedagógico das escolas e estimula, a longo prazo, a preservação do patrimônio natural da região.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="prototipo">
   <div class="container-narrow">
     <div class="proto-wrap">
@@ -431,6 +478,12 @@
         <span class="tag">rascunho · em produção</span>
         <h2 style="font-size:clamp(1.7rem,2.8vw,2.2rem);">Rascunho da jogabilidade</h2>
         <p>Ao lado está um rascunho do mapa aberto da floresta que A.S.H patrulha: um trecho da Serra Paulista espalhado com diversos pontos de foco — verde, amarelo e vermelho, conforme os níveis de risco descritos na proposta — que o jogador precisa identificar e priorizar a cada rodada.</p>
+        <ul>
+          <li><strong>Barra de tempo:</strong> mostra quanto tempo resta para concluir o nível, com uma barra visual e um contador numérico. Assim, até crianças que ainda não leem bem conseguem acompanhar.</li>
+          <li><strong>Barra de progresso:</strong> mostra quanto falta para vencer o nível. Resolver um ponto amarelo rende mais pontos do que um vermelho, o que incentiva agir cedo. Falhar um minigame não deixa o ponto verde e ainda tira progresso.</li>
+          <li><strong>Minigames:</strong> pequenas tarefas que abrem ao clicar em um ponto amarelo ou vermelho, cada uma com uma instrução curta e um tempo limite. Concluir soma pontos na barra de progresso; não concluir tira pontos. Enquanto um minigame está ativo, a barra de tempo do nível fica parada.</li>
+          <li><strong>Propagação:</strong> quanto mais pontos vermelhos no mapa, mais rápido a barra de tempo acaba. Evitar o incêndio compensa.</li>
+        </ul>
       </div>
 
       <div class="screen">
