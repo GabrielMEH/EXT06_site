@@ -254,8 +254,13 @@
   /* ---------- TEAM ---------- */
   .team-list{border-top:1px solid var(--line);}
   .team-row{
-    display:grid;grid-template-columns:1fr auto;gap:16px;
-    padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline;
+  display:grid;grid-template-columns:144px 1fr auto;gap:20px;
+  padding:20px 0;border-bottom:1px solid var(--line);align-items:center;
+  }
+  .team-photo{
+    width:144px;height:144px;border-radius:50%;
+    object-fit:cover;object-position:center top;
+    border:1px solid var(--line);display:block;
   }
   .team-row .name{font-family:'Fraunces',serif;font-size:1.15rem;}
   .team-row .role{color:var(--text-muted);font-size:0.92rem;}
@@ -467,9 +472,21 @@
       <h2>Equipe</h2>
     </div>
     <div class="team-list">
-      <div class="team-row"><div class="name">Ana Roberta Fornari</div><div class="role"></div></div>
-      <div class="team-row"><div class="name">Gabriel Negreiros Pereira</div><div class="role"></div></div>
-      <div class="team-row"><div class="name">Lívia Stefanni Luiz Santos</div><div class="role"></div></div>
+      <div class="team-row">
+        <img class="team-photo" src="src/ana.jpeg" alt="Foto de Ana Roberta Fornari">
+        <div class="name">Ana Roberta Fornari</div>
+        <div class="role"></div>
+      </div>
+      <div class="team-row">
+        <img class="team-photo" src="src/gabriel.jpeg" alt="Foto de Gabriel Negreiros Pereira">
+        <div class="name">Gabriel Negreiros Pereira</div>
+        <div class="role"></div>
+      </div>
+      <div class="team-row">
+        <img class="team-photo" src="src/livia.jpeg" alt="Foto de Lívia Stefanni Luiz Santos">
+        <div class="name">Lívia Stefanni Luiz Santos</div>
+        <div class="role"></div>
+      </div>
     </div>
   </div>
 </section>
